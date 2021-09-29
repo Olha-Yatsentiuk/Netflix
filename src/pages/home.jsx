@@ -1,9 +1,9 @@
 import React from 'react';
+import { Feature, OptForm } from '../components';
+import { HeaderContainer } from '../containers/header';
 import { JumbotronContainer } from '../containers/jumbotron';
-import { OptForm, Feature } from '../components';
 import { FaqsContainer } from '../containers/faqs';
 import { FooterContainer } from '../containers/footer';
-import { HeaderContainer } from '../containers/header';
 
 export default function Home() {
   return (
@@ -20,11 +20,10 @@ export default function Home() {
           </OptForm>
         </Feature>
       </HeaderContainer>
+
       <JumbotronContainer />
       <FaqsContainer />
       <FooterContainer />
-     
     </>
-    
   );
 }
