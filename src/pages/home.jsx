@@ -1,9 +1,9 @@
 import React from 'react';
 import { Feature, OptForm } from '../components';
-import { HeaderContainer } from '../containers/header';
-import { JumbotronContainer } from '../containers/jumbotron';
-import { FaqsContainer } from '../containers/faqs';
-import { FooterContainer } from '../containers/footer';
+import { HeaderContainer } from '../containers/Header';
+import { JumbotronContainer } from '../containers/Jumbotron';
+import { FaqsContainer } from '../containers/FAQsContainer';
+import { FooterContainer } from '../containers/Footer';
 
 export default function Home() {
   return (
@@ -16,7 +16,9 @@ export default function Home() {
             <OptForm.Input placeholder="Email address" />
             <OptForm.Button>Try it now</OptForm.Button>
             <OptForm.Break />
-            <OptForm.Text>Ready to watch? Enter your email to create or restart your membership.</OptForm.Text>
+            <OptForm.Text>
+              Ready to watch? Enter your email to create or restart your membership.
+            </OptForm.Text>
           </OptForm>
         </Feature>
       </HeaderContainer>

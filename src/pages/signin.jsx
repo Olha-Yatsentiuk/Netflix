@@ -1,10 +1,10 @@
 import React, { useState, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { FirebaseContext } from '../context/firebase';
+import { FirebaseContext } from '../firebase/firebaseContext';
 import { Form } from '../components';
-import { HeaderContainer } from '../containers/header';
-import { FooterContainer } from '../containers/footer';
-import * as ROUTES from '../constants/routes';
+import { HeaderContainer } from '../containers/Header';
+import { FooterContainer } from '../containers/Footer';
+import * as ROUTES from '../routes/PageRoutes';
 
 export default function SignIn() {
   const history = useHistory();
@@ -61,7 +61,8 @@ export default function SignIn() {
             New to Netflix? <Form.Link to="/signup">Sign up now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
-            This page is protected by Google reCAPTCHA to ensure you're not a bot. Learn more.
+            This page is protected by Google reCAPTCHA to ensure you're not a bot.
+            Learn more.
           </Form.TextSmall>
         </Form>
       </HeaderContainer>
