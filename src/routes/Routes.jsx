@@ -36,11 +36,9 @@ export function Routes() {
         <ProtectedRoute user={user} path={ROUTES.FAVOURITES}>
           <Favourites />
         </ProtectedRoute>
-        {/* <IsUserRedirect user={user} loggedInPath={ROUTES.FAVOURITES} path={ROUTES.HOME}>
+        <IsUserRedirect user={user} loggedInPath={ROUTES.FAVOURITES} path={ROUTES.HOME}>
           <Home />
-        </IsUserRedirect> */}
-
-
+        </IsUserRedirect>
       </Switch>
     </Router>
   );
