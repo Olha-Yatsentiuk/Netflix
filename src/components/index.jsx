@@ -9,3 +9,5 @@ export { default as Footer } from './footer/Footer';
 export { default as Header } from './header/Header';
 export { default as Loading } from './loading/Loading';
 export { default as Player } from './player/Player';
+export { default as Likes } from './likes/Likes';
+export { default as Favourites } from './favourites/Favourites';

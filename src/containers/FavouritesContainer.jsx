@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import Fuse from 'fuse.js';
 import { Card, Header, Loading, Player, Likes, Favourites } from '../components';
 import * as ROUTES from '../routes/PageRoutes';
 import logo from '../logo.svg';
@@ -7,11 +6,10 @@ import { FirebaseContext } from '../firebase/firebaseContext';
 import { SelectProfileContainer } from './Profiles';
 import { FooterContainer } from './Footer';
 
-export function BrowseContainer({ slides }) {
+export function FavouritesContainer({ slides }) {
   const [category, setCategory] = useState('series');
   const [profile, setProfile] = useState({});
   const [loading, setLoading] = useState(true);
-  const [searchTerm, setSearchTerm] = useState('');
   const [slideRows, setSlideRows] = useState([]);
 
   const { firebase } = useContext(FirebaseContext);
@@ -27,18 +25,7 @@ export function BrowseContainer({ slides }) {
     setSlideRows(slides[category]);
   }, [slides, category]);
 
-  useEffect(() => {
-    const fuse = new Fuse(slideRows, {
-      keys: ['data.description', 'data.title', 'data.genre'],
-    });
-    const results = fuse.search(searchTerm).map(({ item }) => item);
-    if (slideRows.length > 0 && searchTerm.length > 3 && results.length > 0) {
-      setSlideRows(results);
-    } else {
-      setSlideRows(slides[category]);
-    }
-  }, [searchTerm]);
-
+ 
 
   return profile.displayName ? (
     <>
@@ -62,8 +49,7 @@ export function BrowseContainer({ slides }) {
             </Header.TextLink>
           </Header.Group>
           <Header.Group>
-            <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-            <Header.Profile>
+             <Header.Profile>
               <Header.Picture src={user.photoURL} />
               <Header.Dropdown>
                 <Header.Group>
@@ -75,25 +61,12 @@ export function BrowseContainer({ slides }) {
                     Sign out
                   </Header.TextLink>
                 </Header.Group>
-                <Header.ButtonLink to={ROUTES.FAVOURITES}>Favourites
-                </Header.ButtonLink>
               </Header.Dropdown>
             </Header.Profile>
           </Header.Group>
         </Header.Frame>
 
-        <Header.Feature>
-          <Header.FeatureCallOut>Watch Shan Chi Now</Header.FeatureCallOut>
-          <Header.Text>
-            "Shang-Chi and The Legend of The Ten Rings" stars Simu Liu as Shang-Chi,
-            who must confront the past he thought he left behind when he is drawn
-            into the web of the mysterious Ten Rings organization. The film also
-            stars Tony Leung as Wenwu, Awkwafina as Shang-Chi's friend Katy and
-            Michelle Yeoh as Jiang Nan.
-          </Header.Text>
-          <Header.PlayButton>Play</Header.PlayButton>
-        </Header.Feature>
-      </Header>
+    </Header>
 
       <Card.Group>
         {slideRows.map((slideItem) => (

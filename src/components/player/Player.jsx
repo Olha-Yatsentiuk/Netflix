@@ -1,6 +1,6 @@
 import React, { useState, useContext, createContext } from 'react';
 import ReactDOM from 'react-dom';
-import { Container, Button, Overlay, Inner, Close } from './Player.styles';
+import { Container, Button, Overlay, Inner, Close, LikesButton } from './Player.styles';
 
 export const PlayerContext = createContext();
 
@@ -44,3 +44,4 @@ Player.Button = function PlayerButton({ ...restProps }) {
     </Button>
   );
 };
+

@@ -1,5 +1,4 @@
 import React, { useState, useContext, createContext } from 'react';
-
 import {
   Container,
   Group,
@@ -86,7 +85,7 @@ Card.Feature = function CardFeature({ children, category, ...restProps }) {
       src={`/images/${category}/${itemFeature.genre}/${itemFeature.slug}/large.jpg`}
     >
       <Content>
-        <FeatureTitle>{itemFeature.title}</FeatureTitle>
+        <FeatureTitle>{itemFeature.title} </FeatureTitle>
         <FeatureText>{itemFeature.description}</FeatureText>
         <FeatureClose onClick={() => setShowFeature(false)}>
           <img src="/images/icons/close.png" alt="Close" />

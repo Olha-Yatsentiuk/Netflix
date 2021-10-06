@@ -12,7 +12,7 @@ export const Overlay = styled.div`
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.75);
-  margin: 0 20px;
+  margin: 0 10px;
 `;
 
 export const Inner = styled.div`
@@ -70,7 +70,7 @@ export const Button = styled.button`
   font-weight: bold;
   color: white;
   font-size: 18px;
-  height: 45px;
+  height: 30px;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -82,3 +82,4 @@ export const Button = styled.button`
     background-color: #ff0a16;
   }
 `;
+
